@@ -20,10 +20,11 @@ R = 128;
 M = 1024;
 
 %% CREATE SIGNAL
-[x, fs] = readAudio('signals/speech@24kHz.wav');
+[x, fs] = readAudio('signals/DoYouDareToComputeTheSTFT.wav');
 
 %% STFT
 [X,t,f] = stft(x,fs,w,R,M);
 Xdb = mag2db(X);
 figure
+colormap(colormapVoicebox)
 image(abs(Xdb))

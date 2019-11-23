@@ -24,6 +24,6 @@ function [X,t,f] = stft(x,fs,w,R,M)
 		f = padded(R*frame+1:R*frame+N);
 		fw = f'.*w;
 		res = fft(fw, M);
-		X(:,frame+1) = res(M/2+1:end);
+		X(:,frame+1) = res(1:M/2);
 	end
 end
